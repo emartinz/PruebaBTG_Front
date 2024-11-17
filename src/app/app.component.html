@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <!-- Select para escoger usuario -->
+    <label for="userSelect">Seleccionar Usuario</label>
+    <select id="userSelect" (change)="onUserChange($event)">
+      @for(user of users; track user.id){
+        <option value="{{user.id}}">{{user.name}}</option>
+      }
+    </select>
+  </div>
+  <ul class="navbar-list">
+    <li><a routerLink="/" class="navbar-item">Home</a></li>
+    <li><a routerLink="/subscribe" class="navbar-item">Subscribe</a></li>
+    <li><a routerLink="/transaction-history" class="navbar-item">Transaction History</a></li>
+  </ul>
+  <div class="navbar-right">
+    @if (selectedUser) {
+      <div class="user-info">
+        <div class="user-details">
+          <p><strong>{{ selectedUser.name }}</strong></p>
+          <p>Saldo: {{ selectedUser.balance | currency }}</p> 
+        </div>
+        
+        <div class="user-avatar">{{ getInitials(selectedUser.name) }}</div>
+      </div>
+    }
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

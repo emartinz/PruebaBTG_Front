@@ -1,0 +1,117 @@
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;  // Asegura que padding no afecte el ancho
+
+    .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+        }
+    }
+
+    input, select, button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0; // Margen entre inputs
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 15px;
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+          
+        .button-group button:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+/* Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+    .form-container {
+        background-color: #222;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+        .form-group {    
+            label {
+                color: white;
+            }
+            
+            input:focus, select:focus {
+                border-color: #007bff;
+            }
+        }
+    
+        input, select, button {
+            border: 1px solid #0a2f47;
+        }
+    
+        .button-group {    
+            button:first-child {
+                background-color: #28a745;
+                color: white;
+            }
+              
+            button:last-child {
+                background-color: #dc3545;
+                color: white;
+            }
+        }
+    }
+}
+
+/* Modo Claro */
+@media (prefers-color-scheme: light) {
+    .form-container {
+        background-color: #333;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+        .form-group {    
+            label {
+                color: black;
+            }
+            
+            input:focus, select:focus {
+                border-color: #007bff;
+            }
+        }
+    
+        input, select, button {
+            border: 1px solid #ccc;
+        }
+    
+        .button-group {    
+            button:first-child {
+                background-color: #28a745;
+                color: white;
+            }
+              
+            button:last-child {
+                background-color: #dc3545;
+                color: white;
+            }
+        }
+    }
+}

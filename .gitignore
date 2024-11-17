@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+
+# Angular CLI cache
+.angular/
+
+# Build output
+dist/
+out-tsc/
+
+# Testing
+coverage/
+
+# Environment files (personalizados si incluyen claves sensibles)
+src/environments/*.ts
+
+# IDEs y configuraciones locales
+.idea/
+.vscode/
+
+# Archivos temporales
+*.log
+*.tmp
+*.temp
+
+# Sistemas operativos
+.DS_Store
+Thumbs.db

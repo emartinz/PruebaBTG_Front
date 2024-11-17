@@ -1,0 +1,32 @@
+<div class="form-container" [formGroup]="myForm">
+    <div class="form-group">
+      <label for="userId">User ID</label>
+      <input id="userId" formControlName="userId" [value]="selectedUser?.id" />
+    </div>
+    
+    <div class="form-group">
+      <label for="selectedFund">Fondo de Inversion</label>
+      <select id="selectedFund" formControlName="selectedFund" (change)="onSelectionChange($event)">
+        @for(fund of funds; track fund.id){
+          <option value="{{fund.id}}">{{fund.name}} ({{fund.minimumAmount}})</option>
+        }
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="investmentAmount">Monto de Inversion</label>
+      <input id="investmentAmount"
+        currencyMask
+        formControlName="investmentAmount"
+        placeholder="Enter Amount"
+        [options]="{ prefix: '$', thousands: ',', decimal: '.' }"
+      />
+    </div>
+
+    <div class="button-group">
+      <button (click)="subscribe()">Suscribirse</button>
+      <button (click)="cancel()">Cancelar</button>
+    </div>
+  
+    <div>{{ message }}</div>
+</div>
